@@ -4,10 +4,12 @@ export default function NavBar(){
     return(
         <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">CineNow</a>
+        <Link href={'/'}>
+         <button className="btn btn-ghost normal-case text-xl">CineNow</button>
+        </Link>
       </div>
       <div className="flex-none">
-        <Link href={""}>
+        <Link href={"/pageFav"}>
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

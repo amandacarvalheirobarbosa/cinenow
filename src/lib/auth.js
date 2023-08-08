@@ -32,7 +32,7 @@ export const OPTIONS = {
         });
 
         console.log(user);
-        
+
         if (!user || !(await compare(credentials.password, user.password))) {
           return null;
         }
@@ -40,16 +40,16 @@ export const OPTIONS = {
         return {
           id: user.id,
           email: user.email,
-          name: user.name
+          name: user.name,
         };
       },
     }),
   ],
   pages: {
-      signIn: '/login',
-      signOut: '/login',
-      error: '/login',
-  }
+    signIn: "/login",
+    signOut: "/login",
+    error: "/login",
+  },
 };
 
 /* export default NextAuth(OPTIONS); */

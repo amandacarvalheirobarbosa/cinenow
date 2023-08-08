@@ -1,9 +1,8 @@
 import NextAuth from "next-auth/next";
-import { prisma } from "../../../../lib/prisma";
 import { compare } from "bcryptjs";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const options = {
+export const OPTIONS = {
     session: {
       strategy: "jwt",
     },
@@ -19,6 +18,8 @@ export const options = {
           password: { label: "Password", type: "password" },
         },
         async authorize(credentials) {
+          console.log(credentials);
+
           if (!credentials?.email || !credentials.password) {
             return null;
           }
@@ -28,7 +29,8 @@ export const options = {
               email: credentials.email,
             },
           });
-  
+          
+          console.log(user);
           if (!user || !(await compare(credentials.password, user.password))) {
             return null;
           }
@@ -48,5 +50,5 @@ export const options = {
     }
   };
 
-const handler=NextAuth(options);
+const handler=NextAuth(OPTIONS);
 export { handler as GET, handler as POST };

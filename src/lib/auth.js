@@ -3,7 +3,7 @@ import { compare } from "bcryptjs";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const authOptions = {
+export const OPTIONS = {
   session: {
     strategy: "jwt",
   },
@@ -19,6 +19,8 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        console.log(credentials);
+
         if (!credentials?.email || !credentials.password) {
           return null;
         }
@@ -29,6 +31,8 @@ export const authOptions = {
           },
         });
 
+        console.log(user);
+        
         if (!user || !(await compare(credentials.password, user.password))) {
           return null;
         }
@@ -41,6 +45,11 @@ export const authOptions = {
       },
     }),
   ],
+  pages: {
+      signIn: '/login',
+      signOut: '/login',
+      error: '/login',
+  }
 };
 
-export default NextAuth(authOptions);
+/* export default NextAuth(OPTIONS); */

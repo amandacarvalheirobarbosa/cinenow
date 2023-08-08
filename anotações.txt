@@ -1,0 +1,2 @@
+Para usar o form e validação, foi utilizado a biblioteca: react hook form
+https://react-hook-form.com/get-started

@@ -21,7 +21,7 @@ export default function CardFilm({id, title, genres, overview, voteAverage, post
   return(
     <>
     <div className="card card-compact w-80 bg-base-100 shadow-xl px-3 py-5">
-      <Image src={"https://image.tmdb.org/t/p/original"+posterPath} width={200} height={100} alt={title} 
+      <Image src={"https://image.tmdb.org/t/p/original"+posterPath} width={150} height={80} alt={title} 
             className="rounded-lg mx-auto object-cover"/>
       <div className="card-body">
 

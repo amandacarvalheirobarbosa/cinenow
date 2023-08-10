@@ -6,7 +6,11 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <CardFilm title="Barbie" genres={teste} overview='No mundo mágico das Barbies, "Barbieland", uma das bonecas começa a perceber que não se encaixa como as outras. Depois de ser expulsa, ela parte para uma aventura no "mundo real", onde descobre que a beleza está no interior de cada um.' voteAverage={0} posterPath="/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg" releaseDate={"2023-07-19"}/>
+      <div className="flex flex-row px-5 py-5 space-x-5">
+        <CardFilm id={1} title="Barbie" genres={teste} overview='No mundo mágico das Barbies, "Barbieland", uma das bonecas começa a perceber que não se encaixa como as outras. Depois de ser expulsa, ela parte para uma aventura no "mundo real", onde descobre que a beleza está no interior de cada um.' voteAverage={7.491} posterPath="/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg" releaseDate={"19/07/2023"}/>
+        <CardFilm id={2} title="Barbie" genres={teste} overview='No mundo mágico das Barbies, "Barbieland", uma das bonecas começa a perceber que não se encaixa como as outras. Depois de ser expulsa, ela parte para uma aventura no "mundo real", onde descobre que a beleza está no interior de cada um.' voteAverage={7.491} posterPath="/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg" releaseDate={"19/07/2023"}/>
+        <CardFilm id={3} title="Barbie" genres={teste} overview='No mundo mágico das Barbies, "Barbieland", uma das bonecas começa a perceber que não se encaixa como as outras. Depois de ser expulsa, ela parte para uma aventura no "mundo real", onde descobre que a beleza está no interior de cada um.' voteAverage={7.491} posterPath="/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg" releaseDate={"19/07/2023"}/>
+      </div>
       <Footer/>
     </>
   );

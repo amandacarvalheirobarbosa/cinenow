@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Rating from "./rating";
 
 type movie = {
+  id: number
   title: string
   genres: genre[]
   overview: string
@@ -15,18 +17,21 @@ type genre = {
   name: string
 }
 
-export default function CardFilm({title, genres, overview, voteAverage, posterPath, releaseDate}: movie ) {
+export default function CardFilm({id, title, genres, overview, voteAverage, posterPath, releaseDate}: movie ) {
   return(
     <>
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <Image src={"https://image.tmdb.org/t/p/original"+posterPath} width={200} height={100} alt="" 
+    <div className="card card-compact w-80 bg-base-100 shadow-xl px-3 py-5">
+      <Image src={"https://image.tmdb.org/t/p/original"+posterPath} width={200} height={100} alt={title} 
             className="rounded-lg mx-auto object-cover"/>
       <div className="card-body">
+
         <h2 className="card-title">{title}</h2>
         <p>{overview}</p>
+        <div className="badge badge-outline badge-sm">{releaseDate}</div>
+
         <div className="card-actions justify-end">
-          <div className="badge badge-md">{releaseDate}</div>
-          <button className="btn btn-secondary">
+          <Rating key={id} voteAverage={voteAverage} id={id}/>
+          <button className="btn btn-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -41,9 +46,9 @@ export default function CardFilm({title, genres, overview, voteAverage, posterPa
               />
             </svg>
           </button>
-        </div>
-      </div>
-      {/* rating */}
+        </div>        
+      </div> 
+
       <div className="card-actions justify-end">
         {genres.map((genre) => <div key={genre.id} className="badge badge-secondary badge-outline">{genre.name}</div>)}
       </div>

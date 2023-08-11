@@ -1,6 +1,5 @@
-import { prisma } from "@/lib/prisma";
+import prisma from "./prisma";
 import { compare } from "bcryptjs";
-import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const OPTIONS = {
@@ -51,5 +50,3 @@ export const OPTIONS = {
     error: "/login",
   },
 };
-
-/* export default NextAuth(OPTIONS); */

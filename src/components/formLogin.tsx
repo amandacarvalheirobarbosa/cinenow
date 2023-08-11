@@ -22,7 +22,7 @@ export default function FormLogin() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex h-screen w-screen justify-center align-middle">
+      <div className="flex h-[calc(100vh-54px)] w-screen justify-center ">
         <div className="flex flex-col space-y-3 justify-center">
           <h1
             className="text-center"

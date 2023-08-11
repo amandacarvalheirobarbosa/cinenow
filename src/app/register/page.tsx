@@ -4,7 +4,7 @@ import Footer from "../../components/footer";
 export default function Register() {
   return (
     <>
-      <div className="flex h-screen w-screen justify-center align-middle">
+      <div className="flex h-[calc(100vh-54px)] w-screen justify-center align-middle">
         <div className="flex flex-col space-y-3 justify-center">
           <h1
             className="text-center"

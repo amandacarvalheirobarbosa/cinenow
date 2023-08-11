@@ -1,7 +1,7 @@
 import NextAuth from "next-auth/next";
 import { compare } from "bcryptjs";
 import CredentialsProvider from "next-auth/providers/credentials";
-import prisma from "src/lib/prisma";
+import prisma from "../../../../lib/prisma";
 
 export const OPTIONS = {
   session: {
@@ -46,7 +46,7 @@ export const OPTIONS = {
     signOut: "/login",
     error: "/login",
   },
-};
+} as any;
 
 const handler = NextAuth(OPTIONS);
 export { handler as GET, handler as POST };

@@ -1,4 +1,4 @@
-## ⚠️ THIS PROJECT IS IN DEVELOPMENT... ⚠️
+⚠️ THIS PROJECT IS IN DEVELOPMENT... ⚠️
 
 ## Getting Started
 

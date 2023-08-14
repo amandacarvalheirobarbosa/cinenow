@@ -20,7 +20,7 @@ type genre = {
 export default function CardFilm({id, title, genres, overview, voteAverage, posterPath, releaseDate}: movie ) {
   return(
     <>
-    <div className="card card-compact w-80 bg-base-100 shadow-xl px-3 py-5">
+    <div className="card card-compact w-72 bg-base-100 shadow-xl px-3 py-5 mx-3 my-3">
       <Image src={"https://image.tmdb.org/t/p/original"+posterPath} width={150} height={80} alt={title} 
             className="rounded-lg mx-auto object-cover"/>
       <div className="card-body">

@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import NavBar from "../components/nabBar";
 
 async function getMovies() {
-  const movies = await fetch('https://api.themoviedb.org/3/movie/upcoming', {
+  const movies = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=pt-BR', {
     headers: {
       'Authorization': `Bearer ${process.env.TOKEN}`,
       'accept': 'application/json'

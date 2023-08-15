@@ -41,6 +41,27 @@ export const OPTIONS = {
       },
     }),
   ],
+  callbacks: {
+    session: ({ session, token }) => {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: token.id
+        },
+      };
+    },
+    jwt: ({ token, user }) => {
+      if (user) {
+        const u = user as unknown as any;
+        return {
+          ...token,
+          id: u.id
+        };
+      }
+      return token;
+    },
+  },
   pages: {
     signIn: "/login",
     signOut: "/login",

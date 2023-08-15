@@ -8,20 +8,20 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
-  email String @unique
-  name String
+  id       String     @id @default(uuid())
+  email    String     @unique
+  name     String
   password String
-  movies FavMovie[]
+  movies   FavMovie[]
 
   @@map("user_tbl")
 }
 
 model FavMovie {
-  id Int @id @default(autoincrement())
-  user User @relation(fields: [userId], references: [id])
-  userId String
-  movieId String @unique
+  id      Int    @id @default(autoincrement())
+  user    User   @relation(fields: [userId], references: [id])
+  userId  String
+  movieId Int    @unique
 
   @@map("fav_movie_tbl")
 }

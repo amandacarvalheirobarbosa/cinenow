@@ -1,5 +1,7 @@
+'use client'
 import Image from "next/image";
 import Rating from "./rating";
+import { useSession } from "next-auth/react";
 
 type movie = {
   id: number
@@ -18,6 +20,23 @@ type genre = {
 }
 
 export default function CardFilm({id, title, genres, overview, voteAverage, posterPath, releaseDate}: movie ) {
+  const session = useSession() as any;
+
+  const handleFav = async (id: number) => {
+    console.log(id);
+    try{
+      await fetch('/api/user', {
+        method: 'POST',
+        body: JSON.stringify({id: id, userId: session?.data?.user?.id}),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+    }catch(error) {
+      console.log(error);
+    }
+  };
+
   return(
     <>
     <div className="card card-compact w-72 bg-base-100 shadow-xl px-3 py-5 mx-3 my-3">
@@ -33,7 +52,7 @@ export default function CardFilm({id, title, genres, overview, voteAverage, post
             <Rating key={id} voteAverage={voteAverage} id={id}/>
           </div>
           <div className="card-actions">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={() => handleFav(id)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -53,7 +72,9 @@ export default function CardFilm({id, title, genres, overview, voteAverage, post
       </div> 
 
       <div className="card-actions justify-end">
-        {genres?.map((genre) => <div key={genre.id} className="badge badge-secondary badge-outline">{genre.name}</div>)}
+        {genres?.map((genre) => 
+          <div key={genre.id} className="badge badge-secondary badge-outline">{genre.name}</div>
+        )}
       </div>
     </div>
     </>

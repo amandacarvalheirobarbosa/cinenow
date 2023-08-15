@@ -5,7 +5,7 @@ import NavBar from "../components/nabBar";
 async function getMovies() {
   const movies = await fetch('https://api.themoviedb.org/3/movie/upcoming', {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZTFmZDE4ODc2NWI0NDI4NzBjOGJhODRjZjY0YTJlOCIsInN1YiI6IjY0ZGE1YzYwYjc3ZDRiMTEzZmM0MjYxZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-kyIJwA29tb7EUiQKx7Uh1OVgqQE0aGoOt93HRXVVqk',
+      'Authorization': `Bearer ${process.env.TOKEN}`,
       'accept': 'application/json'
     }
   });

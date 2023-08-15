@@ -53,7 +53,7 @@ export default function CardFilm({id, title, genres, overview, voteAverage, post
       </div> 
 
       <div className="card-actions justify-end">
-        {genres.map((genre) => <div key={genre.id} className="badge badge-secondary badge-outline">{genre.name}</div>)}
+        {genres?.map((genre) => <div key={genre.id} className="badge badge-secondary badge-outline">{genre.name}</div>)}
       </div>
     </div>
     </>

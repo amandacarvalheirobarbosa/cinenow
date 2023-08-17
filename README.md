@@ -11,7 +11,7 @@ Este projeto está em sua primeira fase do processo, que é: ter o site funciona
 Próxima etapa será criar uma forma de notificá-lo.
 
 ### Getting Started/Como começar
-`yarn dev`
+`yarn start:dev`
 
 ### Deploy on Vercel
 https://cinenow.vercel.app/
